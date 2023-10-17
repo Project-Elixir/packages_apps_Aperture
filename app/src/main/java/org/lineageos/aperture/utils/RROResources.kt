@@ -5,14 +5,12 @@
 
 package org.lineageos.aperture.utils
 
-import android.annotation.SuppressLint
 import android.content.Context
-import android.content.res.Resources
 
 class RROResources private constructor(val context: Context, private val packageName: String) {
     private val resources = context.packageManager.getResourcesForApplication(packageName)
 
-    @SuppressLint("DiscouragedApi")
+    @Suppress("DiscouragedApi")
     private fun getIdentifier(id: Int) =
         resources.getIdentifier(
             context.resources.getResourceEntryName(id),

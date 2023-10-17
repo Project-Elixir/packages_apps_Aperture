@@ -5,18 +5,17 @@
 
 package org.lineageos.aperture.ui
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.RectF
 import android.util.AttributeSet
 import android.util.Range
 import android.view.MotionEvent
-import org.lineageos.aperture.mapToRange
+import org.lineageos.aperture.ext.*
 
 class VerticalSlider @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : Slider(context, attrs, defStyleAttr) {
-    @SuppressLint("ClickableViewAccessibility")
+    @Suppress("ClickableViewAccessibility")
     override fun onTouchEvent(event: MotionEvent?): Boolean {
         super.onTouchEvent(event)
 

@@ -5,12 +5,11 @@
 
 package org.lineageos.aperture.utils
 
-import android.annotation.SuppressLint
-import android.content.res.Resources
 import android.content.SharedPreferences
+import android.content.res.Resources
 import android.media.MediaActionSound
 import android.os.Build
-import org.lineageos.aperture.shutterSound
+import org.lineageos.aperture.ext.*
 
 class CameraSoundsUtils(private val sharedPreferences: SharedPreferences) {
     private val mediaActionSound = MediaActionSound().apply {
@@ -42,7 +41,7 @@ class CameraSoundsUtils(private val sharedPreferences: SharedPreferences) {
 
     companion object {
         val mustPlaySounds: Boolean
-            @SuppressLint("DiscouragedApi")
+            @Suppress("DiscouragedApi")
             get() = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 MediaActionSound.mustPlayShutterSound()
             } else {
